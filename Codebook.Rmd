@@ -1,0 +1,203 @@
+---
+title: "Codebook for tidy_data.txt"
+author: "Trina Kuriger-Laber"
+date: "Friday, February 20, 2015"
+output: html_document
+---
+
+This is a codebook for the tidy_data.txt data file.
+
+##Data
+The tidy_data is a data set that summarized data from the UCI HAR Dataset, found at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+##Data Transformation
+In creating the  tidy\_data file, the data was transformed as follows. All of the data from the following files was combined into one data set: subject\_test.txt, X\_test.txt, y\_test.txt, subject\_train.txt, X\_train.txt, y\_train.txt, activity\_labels.txt, features.txt. This created one combined data set that had all the training and testing data for all subjects and all activities, with all the variables and activities labeled. 
+Also, I changed the variable labels to be more explicit, using "time" instead of "t" and "freq" instead of "f" for frequency, and correcting variable names where the term Body was used twice (changing BodyBody to Body). Problematic characters -,( and ) were also removed from the variable names and they were all changed to camelCase.
+Then I extracted only the measurements on the mean and standard deviation for each measurement and grouped the data by subject & activity and get the mean value of each variable. This mean value of each variable is what is given in the tidy\_data file.
+
+##Variables
+**Note: Measurements obtained in this study were used to estimate variables of in the X, Y and Z directions, so many of the varibles have an additional \_X \_Y or \_Z designation indicating the direction of that value. In this codebook those variables are indicated by (\_X, \_Y or \_Z) following the variable name.**
+
+####subject
+* 1...30
+  
+There were 30 subjects participating in this study. Each subject was assigned a unique number between 1 and 30.
+
+####activity
+* LAYING
+* SITTING
+* STANDING
+* WALKING
+* WALKING_DOWNSTAIRS
+* WALKING_UPSTAIRS
+
+####timeBodyAccMean (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value in the X, Y and Z directions of the body acceleration signals separated by filtering accelerometer 3-axial signals.
+
+####timeBodyAccStd (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation in the X, Y and Z directions of the body acceleration signals separated by filtering accelerometer 3-axial signals.
+
+####timeGravityAccMean (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value in the X, Y and Z directions of the gravity acceleration signals separated by filtering accelerometer 3-axial signals.
+
+
+####timeGravityAccStd (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation in the X, Y and Z directions of the gravity acceleration signals separated by filtering accelerometer 3-axial signals.
+
+####timeBodyAccJerkMean (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value in the X, Y and Z directions of the body linear acceleration jerk signals which are the values for the body linear acceleration derived in time. 
+
+####timeBodyAccJerkStd (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation in the X, Y and Z directions of the body linear acceleration jerk signals which are the values for the body linear acceleration derived in time. 
+
+####timeBodyGyroMean (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value in the X, Y and Z directions of the angular velocity obtained from gyroscope filtered 3-axial signals.
+
+####timeBodyGyroStd (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation in the X, Y and Z directions of the angular velocity obtained from gyroscope filtered 3-axial signals.
+
+####timeBodyGyroJerkMean (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value in the X, Y and Z directions of the angular velocity jerk signals which are the values for the angular velocity derived in time.
+
+####timeBodyGyroJerkStd (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation in the X, Y and Z directions of the angular velocity jerk signals which are the values for the angular velocity derived in time.
+
+####timeBodyAccMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of body acceleration signals calculated using the Euclidean norm.
+
+####timeBodyAccMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation of magnitude of body acceleration signals calculated using the Euclidean norm.
+
+####timeGravityAccMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of the gravity acceleration signals calculated using the Euclidean norm.
+
+####timeGravityAccMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation of magnitude of the gravity acceleration signals calculated using the Euclidean norm.
+
+####timeBodyAccJerkMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of the body linear acceleration jerk signals calculated using the Euclidean norm.
+
+####timeBodyAccJerkMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation of magnitude of the body linear acceleration jerk signals calculated using the Euclidean norm.
+
+####timeBodyGyroMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of the angular velocity calculated using the Euclidean norm.
+
+####timeBodyGyroMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation of magnitude of the angular velocity calculated using the Euclidean norm.
+
+####timeBodyGyroJerkMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of the angular velocity jerk signals calculated using the Euclidean norm.
+
+####timeBodyGyroJerkMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation value of magnitude of the angular velocity jerk signals calculated using the Euclidean norm.
+
+####freqBodyAccMean (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value in the X, Y and Z directions of a Fast Fourier Transform of the body acceleration signals.
+
+####freqBodyAccStd (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation in the X, Y and Z directions of a Fast Fourier Transform of the body acceleration signals.
+
+####freqBodyAccJerkMean (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value in the X, Y and Z directions of a Fast Fourier Transform of the body linear acceleration jerk signals.
+
+####freqBodyAccJerkStd (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation in the X, Y and Z directions of a Fast Fourier Transform of the body linear acceleration jerk signals.
+
+####freqBodyGyroMean (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value in the X, Y and Z directions of a Fast Fourier Transform of body angular velocity.
+
+####freqBodyGyroStd (\_X, \_Y or \_Z)
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standrd deviation in the X, Y and Z directions of a Fast Fourier Transform of body angular velocity.
+
+####freqBodyAccMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of a Fast Fourier Transform of the body acceleration signals calculated using the Euclidean norm.
+
+####freqBodyAccMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation of magnitude of a Fast Fourier Transform of the body acceleration signals calculated using the Euclidean norm.
+
+####freqBodyAccJerkMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of a Fast Fourier Transform of the body linear acceleration jerk signals calculated using the Euclidean norm.
+
+####freqBodyAccJerkMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation of magnitude of a Fast Fourier Transform of the body linear acceleration jerk signals calculated using the Euclidean norm.
+
+####freqBodyGyroMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of a Fast Fourier Transform of body angular velocity calculated using the Euclidean norm.
+
+####freqBodyGyroMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation of magnitude of a Fast Fourier Transform of body angular velocity calculated using the Euclidean norm.
+
+####freqBodyGyroJerkMagMean
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated mean value of magnitude of a Fast Fourier Transform of body angular velocity jerk signals calculated using the Euclidean norm.
+
+####freqBodyGyroJerkMagStd
+* -1...1
+
+A normalized value (i.e.without units) between -1 and 1 that gives the mean of the estimated standard deviation of magnitude of a Fast Fourier Transform of body angular velocity jerk signals calculated using the Euclidean norm.
