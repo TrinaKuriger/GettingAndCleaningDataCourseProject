@@ -9,6 +9,7 @@ This is a codebook for the tidy_data.txt data file.
 
 ##Data
 The tidy_data is a data set that summarized data from the UCI HAR Dataset, found at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+The data in the UCI HAR Dataset is all normalized and **does not have any units**. The data in the tidy_data file is all derived from the UCI HAR Dataset, so it also does not have any units.
 
 ##Data Transformation
 In creating the  tidy\_data file, the data was transformed as follows. All of the data from the following files was combined into one data set: subject\_test.txt, X\_test.txt, y\_test.txt, subject\_train.txt, X\_train.txt, y\_train.txt, activity\_labels.txt, features.txt. This created one combined data set that had all the training and testing data for all subjects and all activities, with all the variables and activities labeled. 
